@@ -12,7 +12,7 @@ RUN \
 # Install required dependencies.
 RUN \
 	apt-get -q update && \
-    apt-get install curl ibssl1.0.0 libssl-dev -qy
+    apt-get install curl ibssl1.0.0 libssl-dev screen -qy
 	
 # Install utorrent	
 RUN \
