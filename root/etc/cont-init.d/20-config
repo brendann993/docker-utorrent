@@ -1,0 +1,18 @@
+#!/usr/bin/with-contenv bash
+
+# make folders
+mkdir -p \
+	/config/log 
+
+# copy config
+[[ ! -e /config/utserver.conf ]] && \
+	cp /defaults/utserver.conf /config/utserver.conf
+
+# create symlink for webui files
+[[ ! -e /config/webui.zip ]] && ln -s \
+/utorrent/webui.zip /config/webui.zip
+
+# permissions
+
+chown -R abc:abc \
+	/config \
