@@ -9,6 +9,6 @@ do
 sleep 1s
 done
 
-utorrent_pid=$(< /config/utserver.pid cut -d '+' -f 2)
+utorrent_pid=$(cat /config/utserver.pid)
 
-tail -n 1 -f /config/log/utserver.log "$utorrent_pid"
+tail -n 1 -f /config/log/utserver.log --pid=$utorrent_pid
