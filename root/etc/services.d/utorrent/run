@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 
-	screen -D -m -S \
-	utorrent s6-setuidgid abc /utorrent/utserver \
+	exec \
+	s6-setuidgid abc /utorrent/utserver \
 	-settingspath /config -configfile /config/utserver.conf -logfile /config/log/utserver.log -pidfile /config/utserver.pid
 
 until [ -e "/config/utserver.pid" ];
